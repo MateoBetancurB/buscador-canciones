@@ -12,7 +12,9 @@ class API {
 				return respuesta.json();
 			})
 			.then((resultado) => {
-				console.log(resultado);
+				const { lyrics } = resultado;
+				UI.divResultado.textContent = lyrics;
+				UI.headingResultado.textContent = `Letra de la canción ${this.cancion} de ${this.artista}`;
 			});
 	}
 }
